@@ -1,0 +1,47 @@
+{
+    "name": "@reactly/react-native-autoplay-scroll-video",
+    "version": "1.1.0",
+    "description": "Extends React Native SectionList Component for position based autoplay video functionality.",
+    "license": "MIT",
+    "repository": "mikejcooper/react-native-autoplay-scroll-video",
+    "keywords": [
+        "react",
+        "native",
+        "autoplay",
+        "video",
+        "scroll",
+        "focus",
+        "npm",
+        "package"
+    ],
+    "main": "src/index.tsx",
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@types/node": "^12.6.8",
+        "@types/react": "^16.8.23",
+        "@types/react-dom": "^16.8.4",
+        "@types/react-native": "^0.60.2",
+        "@types/react-native-modal": "^4.1.1",
+        "@types/react-native-orientation": "^5.0.1",
+        "@types/react-native-video": "^3.1.4",
+        "react": "16.8.6",
+        "react-native": "^0.59.5",
+        "react-native-modal": "^11.1.0",
+        "react-native-slider": "^0.11.0",
+        "react-native-video": "^4.4.4",
+        "tslib": "^1.10.0",
+        "types": "^0.1.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.3.3",
+        "@babel/runtime": "^7.3.1",
+        "@react-native-community/eslint-config": "^0.0.3",
+        "babel-jest": "^24.1.0",
+        "jest": "^24.1.0",
+        "metro-react-native-babel-preset": "^0.54.1",
+        "react-test-renderer": "16.8.6",
+        "typescript": "^3.5.3"
+    }
+}
