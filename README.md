@@ -1,69 +1,77 @@
-# Autoplay Infinity Scroll Video - React Native
+# react-native-autoplay-scroll-video
 
-![React version](https://img.shields.io/badge/react-16.8.23-green.svg)
-![React Native version](https://img.shields.io/badge/react--native-0.60.2-blue.svg)
+<!-- <p>
+<img src="https://travis-ci.org/APSL/react-native-autoplay-scroll-video.svg?branch=master" />
+<img src="https://img.shields.io/npm/dm/react-native-autoplay-scroll-video.svg" />
+<img src="https://img.shields.io/npm/dt/react-native-autoplay-scroll-video.svg" />
+</p> -->
 
----
+A SectionList component that identifies which item is in centre of the screen.
 
-<!-- <a href="https://imgflip.com/gif/36extq"><img src="https://i.imgflip.com/36extq.gif" title="made at imgflip.com"/></a> -->
-<!-- <a href="https://imgflip.com/gif/36ez7s"><img src="https://i.imgflip.com/36ez7s.gif" title="made at imgflip.com"/></a> -->
+<p align="center">
+<img src="https://i.imgflip.com/36ezfp.gif" alt="Scroll demo" width="400">
+</p>
 
-## Slow Scrolling & Fast Scrolling
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a align="left" href="https://imgflip.com/gif/36ezfp"><img src="https://i.imgflip.com/36ezfp.gif" title="made at imgflip.com"/></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a align="right" href="https://imgflip.com/gif/36ezwp"><img src="https://i.imgflip.com/36ezwp.gif" title="made at imgflip.com"/></a>
+## Installation
 
-## Getting Started
+Installation can be done through `npm` or `yarn`:
 
-#### Install node modules:
+```shell
+npm i react-native-autoplay-scroll-video --save
+```
 
-        $ npm install
+```shell
+yarn add react-native-autoplay-scroll-video
+```
 
-#### Link modules:
+## Example
 
-        $ react-native link
+Working Implementation as seen in GIF above - https://github.com/mikejcooper/React-Native-Autoplay-Infinity-Scroll
 
-#### Start server:
+## Usage
 
-        $ react-native start
+We extend the SectionList component adding two new props: the
 
-#### Run project:
+- focusWindow = The number of items above and below the centre that will be triggered in the callback.
+- renderItemWithInfo = Replaces normal 'renderItem' function. Introduces two booleans, itemInFocus & itemInFocusWindow. 
 
-        $ react-native run-android
-        $ react-native run-ios
 
-## Launch Android Emulator (Bash)
+```js
+import SectionListInFocus from '@reactly/react-native-autoplay-scroll-video'
+```
 
-#### List emulators:
+```jsx
+<SectionListInFocus
+    focusWindow={2}
+    renderItemWithInfo={(item: VideoData, itemInFocus: boolean, itemInFocusWindow: boolean) => {
+      return (
+        <YourListItem
+          playContent={itemInFocus}
+          loadContent={itemInFocusWindow}
+        />
+      )
+    }}
+    {...YourSectionListProps}
+/>
+```
 
-        $ emulator -list-avds
 
-#### Launch specific emulator:
+## API
 
-        $ emulator -avd [avd-name]
+### Props
 
-## Run specific Android device
+All the `SectionList` props will be passed.
 
-#### List devices:
+| **Prop**                    | **Type**                         | **Description**                                                                                |
+| --------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `renderItemWithInfo`        | `Function`                       | New renderItem function                                                           |
+| `focusWindow`               | `number`                         | Items above and below the centre that will receive itemInFocusWindow as true.                                    |
 
-        $ adb devices
+## License
 
-#### Run on device with ID:
+MIT.
 
-        $ react-native run-android --deviceId='DEVICE_ID'
+## Author
 
----
-
-## VSCode Extensions
-
-1. ESLint
-2. Prettier
-3. Code Spell Checker
-
----
-
-## Other settings
-
-- [Google APIs] : (API level 28)
+Mike Cooper
